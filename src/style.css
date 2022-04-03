@@ -3,3 +3,11 @@
   justify-content: center;
   align-items: center;
 }
+
+.slider-images > img {
+  display: none;
+}
+
+.slider-images > img.active {
+  display: block;
+}
