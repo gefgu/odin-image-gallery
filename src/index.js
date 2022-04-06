@@ -23,7 +23,19 @@ import "./style.css";
     makeImageActive();
   }
 
+  const recedeSlider = () => {
+    cleanSlider();
+    if (imageIndex - 0 < 0) {
+      imageIndex = imagesElementList.length - 1;
+    } else {
+      imageIndex -= 1;
+    }
+    makeImageActive();
+  }
+
   makeImageActive();
   advanceSlider();
+  advanceSlider();
+  recedeSlider();
 
 })();
