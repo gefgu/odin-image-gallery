@@ -1,17 +1,18 @@
 import "./style.css";
 
 (() => {
+  const imageGallery = document.querySelector(".image-slider-container");
   const imagesElementList = document.querySelectorAll(".slider-images > img");
   let imageIndex = 0;
- 
+
   const makeImageActive = () => {
     imagesElementList[imageIndex].classList.add("active");
-  }
- 
+  };
+
   const cleanSlider = () => {
     const currentImage = document.querySelector(".slider-images > img.active");
     currentImage.classList.remove("active");
-  }
+  };
 
   const advanceSlider = () => {
     cleanSlider();
@@ -21,7 +22,7 @@ import "./style.css";
       imageIndex = 0;
     }
     makeImageActive();
-  }
+  };
 
   const recedeSlider = () => {
     cleanSlider();
@@ -31,14 +32,26 @@ import "./style.css";
       imageIndex -= 1;
     }
     makeImageActive();
-  }
+  };
+
+  const createSliderArrows = () => {
+    const backArrow = document.createElement("button");
+    backArrow.textContent = "⬅️";
+    backArrow.addEventListener("click", () => {
+      recedeSlider();
+    });
+
+    const forwardArrow = document.createElement("button");
+    forwardArrow.textContent = "➡️";
+    forwardArrow.addEventListener("click", () => {
+      advanceSlider();
+    });
+
+    imageGallery.appendChild(backArrow);
+    imageGallery.appendChild(forwardArrow);
+  };
+
+  createSliderArrows();
 
   makeImageActive();
-  advanceSlider();
-  advanceSlider();
-  recedeSlider();
-  recedeSlider();
-  recedeSlider();
-  
-
 })();
