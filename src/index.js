@@ -25,7 +25,7 @@ import "./style.css";
 
   const recedeSlider = () => {
     cleanSlider();
-    if (imageIndex - 0 < 0) {
+    if (imageIndex - 1 < 0) {
       imageIndex = imagesElementList.length - 1;
     } else {
       imageIndex -= 1;
@@ -37,5 +37,8 @@ import "./style.css";
   advanceSlider();
   advanceSlider();
   recedeSlider();
+  recedeSlider();
+  recedeSlider();
+  
 
 })();
