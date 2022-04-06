@@ -40,15 +40,20 @@ import "./style.css";
     backArrow.addEventListener("click", () => {
       recedeSlider();
     });
+    backArrow.classList.add("slider-back-arrow");
 
     const forwardArrow = document.createElement("button");
     forwardArrow.textContent = "➡️";
     forwardArrow.addEventListener("click", () => {
       advanceSlider();
     });
+    forwardArrow.classList.add("slider-forward-arrow");
 
-    imageGallery.appendChild(backArrow);
-    imageGallery.appendChild(forwardArrow);
+    const container = document.createElement("div");
+    container.classList.add("slider-arrows");
+    container.append(backArrow, forwardArrow);
+
+    imageGallery.appendChild(container);
   };
 
   createSliderArrows();
