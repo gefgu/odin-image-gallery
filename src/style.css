@@ -4,12 +4,9 @@
   align-items: center;
 }
 
-.slider-images > img {
-  display: none;
-}
-
-.slider-images > img.active {
-  display: block;
+.slider-images {
+  display: flex;
+  overflow: hidden;
 }
 
 .slider-arrows {
