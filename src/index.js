@@ -80,6 +80,10 @@ import "./style.css";
       const dot = document.createElement("div");
       dot.classList.add("navigation-dot");
       dot.addEventListener("click", () => {
+        const pastActive = container.querySelector(".navigation-dot.active");
+        if (pastActive) {
+          pastActive.classList.remove("active");
+        }
         dot.classList.add("active");
         image.scrollIntoView({behavior: "smooth"})
       })
