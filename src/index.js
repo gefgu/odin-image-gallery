@@ -23,12 +23,30 @@ import "./style.css";
     })
   })();
 
+  const imagesElementList = imageSlider.querySelectorAll("div");
+  let imageIndex = 0;
+
+  const moveToImage = () => {
+    imagesElementList[imageIndex].scrollIntoView({behavior: "smooth"});
+  }
+
   const advanceSlider = () => {
-    imageSlider.scroll({ left: imageSlider.scrollLeft + imageSize, behavior: "smooth" });
+    if (imageIndex + 1 < imagesElementList.length) {
+      imageIndex += 1;
+    } else {
+      imageIndex = 0;
+    }
+    moveToImage();
   };
 
   const recedeSlider = () => {
-    imageSlider.scroll({ left: imageSlider.scrollLeft - imageSize, behavior: "smooth" });
+    cleanSlider();
+    if (imageIndex - 1 < 0) {
+      imageIndex = imagesElementList.length - 1;
+    } else {
+      imageIndex -= 1;
+    }
+    moveToImage();
   };
 
   const createSliderArrows = () => {
