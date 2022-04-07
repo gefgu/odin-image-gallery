@@ -11,7 +11,7 @@ import "./style.css";
       let listOfSources = [];
       for (let i = 0; i < 5; i++) {
         const randomID = Math.floor(Math.random() * 201);
-        listOfSources.push(`https://picsum.photos/id/${randomID}/900/600`)
+        listOfSources.push(`https://picsum.photos/id/${randomID}/1600/900`)
       }
       return listOfSources;
     }
