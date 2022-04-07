@@ -4,19 +4,20 @@ body {
 
 .image-slider-container {
   display: flex;
+  min-height: 900px;
   justify-content: center;
   align-items: center;
 }
 
 .slider-images {
-  min-width: 100%;
   overflow: hidden;
-  height: 600px;
   display: flex;
+  min-width: 100%;
+  min-height: 600px;
 }
 
 .slider-images > div {
-  width: 900px;
+  width: 100%;
   flex-shrink: 0;
   background-position: center;
   background-repeat: no-repeat;
@@ -33,5 +34,7 @@ body {
 
 .slider-arrows button {
   border: 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  padding: 0 16px;
+  margin: 0 32px;
 }
