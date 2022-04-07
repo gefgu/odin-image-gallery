@@ -79,6 +79,10 @@ import "./style.css";
     imagesElementList.forEach((image) => {
       const dot = document.createElement("div");
       dot.classList.add("navigation-dot");
+      dot.addEventListener("click", () => {
+        dot.classList.add("active");
+        image.scrollIntoView({behavior: "smooth"})
+      })
       container.appendChild(dot);
     });
     imageGallery.appendChild(container);
