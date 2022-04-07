@@ -3,8 +3,7 @@ import "./style.css";
 (() => {
   const imageGallery = document.querySelector(".image-slider-container");
   const imageSlider = document.querySelector(".slider-images");
-  const imageSize = 900;
-
+  
   // Create Images
   (() => {
     const getImagesSources = () => {
