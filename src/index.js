@@ -89,6 +89,7 @@ import "./style.css";
       })
       container.appendChild(dot);
     });
+    container.children[0].classList.add("active");
     imageGallery.appendChild(container);
   })();
 })();
