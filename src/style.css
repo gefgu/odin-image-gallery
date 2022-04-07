@@ -42,3 +42,20 @@ body {
   font-weight: bold;
   cursor: pointer;
 }
+
+.navigation-container {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  bottom: 10%;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 32px;
+}
+
+.navigation-dot {
+  width: 32px;
+  height: 16px;
+  border: 3px solid white;
+  border-radius: 16px;
+}
