@@ -33,14 +33,14 @@ import "./style.css";
 
   const createSliderArrows = () => {
     const backArrow = document.createElement("button");
-    backArrow.textContent = "⬅️";
+    backArrow.textContent = "<";
     backArrow.addEventListener("click", () => {
       recedeSlider();
     });
     backArrow.classList.add("slider-back-arrow");
 
     const forwardArrow = document.createElement("button");
-    forwardArrow.textContent = "➡️";
+    forwardArrow.textContent = ">";
     forwardArrow.addEventListener("click", () => {
       advanceSlider();
     });
