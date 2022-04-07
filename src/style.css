@@ -16,7 +16,7 @@ body {
 }
 
 .slider-images > div {
-  width: 100%;
+  width: 900px;
   flex-shrink: 0;
   background-position: center;
   background-repeat: no-repeat;
