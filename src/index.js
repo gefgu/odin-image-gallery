@@ -26,7 +26,30 @@ import "./style.css";
   const imagesElementList = imageSlider.querySelectorAll("div");
   let imageIndex = 0;
 
+  // Create Navigation Dots
+  (() => {
+    const container = document.createElement("div");
+    container.classList.add("navigation-container");
+    imagesElementList.forEach((image, index) => {
+      const dot = document.createElement("div");
+      dot.classList.add("navigation-dot");
+      dot.addEventListener("click", () => {
+        imageIndex = index;
+        moveToImage();
+      });
+      container.appendChild(dot);
+    });
+    container.children[0].classList.add("active");
+    imageGallery.appendChild(container);
+  })();
+
   const moveToImage = () => {
+    const pastActive = document.querySelector(".navigation-dot.active");
+    if (pastActive) {
+      pastActive.classList.remove("active");
+    }
+    const dotList = document.querySelectorAll(".navigation-dot");
+    dotList[imageIndex].classList.add("active");
     imagesElementList[imageIndex].scrollIntoView({ behavior: "smooth" });
   };
 
@@ -71,25 +94,4 @@ import "./style.css";
   };
 
   createSliderArrows();
-
-  // Create Navigation Dots
-  (() => {
-    const container = document.createElement("div");
-    container.classList.add("navigation-container");
-    imagesElementList.forEach((image) => {
-      const dot = document.createElement("div");
-      dot.classList.add("navigation-dot");
-      dot.addEventListener("click", () => {
-        const pastActive = container.querySelector(".navigation-dot.active");
-        if (pastActive) {
-          pastActive.classList.remove("active");
-        }
-        dot.classList.add("active");
-        image.scrollIntoView({behavior: "smooth"})
-      })
-      container.appendChild(dot);
-    });
-    container.children[0].classList.add("active");
-    imageGallery.appendChild(container);
-  })();
 })();
