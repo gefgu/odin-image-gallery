@@ -34,7 +34,11 @@ body {
 
 .slider-arrows button {
   border: 0;
-  font-size: 2rem;
+  font-size: 3rem;
   padding: 0 16px;
   margin: 0 32px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
