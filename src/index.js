@@ -11,24 +11,24 @@ import "./style.css";
       let listOfSources = [];
       for (let i = 0; i < 5; i++) {
         const randomID = Math.floor(Math.random() * 201);
-        listOfSources.push(`https://picsum.photos/id/${randomID}/1600/900`)
+        listOfSources.push(`https://picsum.photos/id/${randomID}/1600/900`);
       }
       return listOfSources;
-    }
+    };
 
-    getImagesSources().forEach(source => {
+    getImagesSources().forEach((source) => {
       const container = document.createElement("div");
       container.style.backgroundImage = `url("${source}")`;
       imageSlider.appendChild(container);
-    })
+    });
   })();
 
   const imagesElementList = imageSlider.querySelectorAll("div");
   let imageIndex = 0;
 
   const moveToImage = () => {
-    imagesElementList[imageIndex].scrollIntoView({behavior: "smooth"});
-  }
+    imagesElementList[imageIndex].scrollIntoView({ behavior: "smooth" });
+  };
 
   const advanceSlider = () => {
     if (imageIndex + 1 < imagesElementList.length) {
@@ -71,4 +71,16 @@ import "./style.css";
   };
 
   createSliderArrows();
+
+  // Create Navigation Dots
+  (() => {
+    const container = document.createElement("div");
+    container.classList.add("navigation-container");
+    imagesElementList.forEach((image) => {
+      const dot = document.createElement("div");
+      dot.classList.add("navigation-dot");
+      container.appendChild(dot);
+    });
+    imageGallery.appendChild(container);
+  })();
 })();
